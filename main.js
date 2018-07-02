@@ -1,4 +1,4 @@
-const socket = io('https://eiyuustream.herokuapp.com/');
+const socket = io('https://stream3005.herokuapp.com/');
 
 $('#div-chat').hide();
 
@@ -11,7 +11,7 @@ socket.on('DANH_SACH_ONLINE', arrUserInfo => {
             ten,
             peerId
         } = user;
-        $('#ulUser').append(`<a href="#" class="list-group-item list-group-item-action" id="${peerId}">${ten}</a>`);
+        $('#ulUser').append(`<li id="${peerId}">${ten}</li>`);
     });
 
     socket.on('CO_NGUOI_DUNG_MOI', user => {
@@ -19,7 +19,7 @@ socket.on('DANH_SACH_ONLINE', arrUserInfo => {
             ten,
             peerId
         } = user;
-        $('#ulUser').append(`<a href="#" class="list-group-item list-group-item-action" id="${peerId}">${ten}</a>`);
+        $('#ulUser').append(`<li id="${peerId}">${ten}</li>`);
     });
 
     socket.on('AI_DO_NGAT_KET_NOI', peerId => {
@@ -35,7 +35,6 @@ function openStream() {
         audio: true,
         video: true
     };
-
     return navigator.mediaDevices.getUserMedia(config);
 }
 
@@ -87,7 +86,7 @@ peer.on('call', call => {
         });
 });
 
-$('#ulUser').on('click', 'a', function() {
+$('#ulUser').on('click', 'li', function() {
     const id = $(this).attr('id');
     console.log(id);
     openStream()

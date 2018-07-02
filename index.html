@@ -12,44 +12,25 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div id="div-chat" class="row">
-            <div class="col-8">
-                <div class="row">
-                    <div class="card">
-                        <video id="localStream" width="300" controls></video>
-                    </div>
-                    <div class="card">
-                        <video id="remoteStream" width="300" controls></video>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        Online Users
-                    </div>
-                    <div id="ulUser" class="list-group">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="div-dang-ky" class="row">
-            <div class="card">
-                <div class="card-header">
-                    Signup
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="txtUsername" placeholder="Enter your name">
-                        </div>
-                        <button id="btnSignUp" type="button" class="btn btn-primary">Sign Up</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div id="div-chat">
+        <p>Online user:</p>
+        <ul id="ulUser">
+        </ul>
+        <h3 id="my-peer">Your Id: </h3>
+        <video id="localStream" width="300" controls></video>
+        <br />
+        <br />
+        <video id="remoteStream" width="300" controls></video>
+        <br />
+        <br />
+        <input type="text" id="remoteId" placeholder="Remote ID">
+        <button id="btnCall">Call</button>
+    </div>
+    <div id="div-dang-ky">
+        <br />
+        <br />
+        <input type="text" id="txtUsername" placeholder="Enter your username">
+        <button id="btnSignUp">Sign Up</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
