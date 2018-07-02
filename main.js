@@ -11,7 +11,7 @@ socket.on('DANH_SACH_ONLINE', arrUserInfo => {
             ten,
             peerId
         } = user;
-        $('#ulUser').append(`<li id="${peerId}">${ten}</li>`);
+        $('#ulUser').append(`<a href="#" class="list-group-item list-group-item-action" id="${peerId}">${ten}</a>`);
     });
 
     socket.on('CO_NGUOI_DUNG_MOI', user => {
@@ -19,7 +19,7 @@ socket.on('DANH_SACH_ONLINE', arrUserInfo => {
             ten,
             peerId
         } = user;
-        $('#ulUser').append(`<li id="${peerId}">${ten}</li>`);
+        $('#ulUser').append(`<a href="#" class="list-group-item list-group-item-action" id="${peerId}">${ten}</a>`);
     });
 
     socket.on('AI_DO_NGAT_KET_NOI', peerId => {
@@ -32,9 +32,10 @@ socket.on('DANG_KY_THAT_BAT', () => alert('Vui long chon username khac!'));
 
 function openStream() {
     const config = {
-        audio: false,
+        audio: true,
         video: true
     };
+
     return navigator.mediaDevices.getUserMedia(config);
 }
 
@@ -86,7 +87,7 @@ peer.on('call', call => {
         });
 });
 
-$('#ulUser').on('click', 'li', function() {
+$('#ulUser').on('click', 'a', function() {
     const id = $(this).attr('id');
     console.log(id);
     openStream()
