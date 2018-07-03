@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Test video stream</title>
-    <script src="jquery.js"></script>
-    <script src="peer.js"></script>
-    <script src="socket.io.js"></script>
+<html>
+<head lang="ja">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Test Video Call</title>
+    <link rel="stylesheet" href="stylenew.css">
 </head>
+<div class="pure-g">
 
-<body>
-    <div id="div-chat">
-        <p>Online user:</p>
-        <ul id="ulUser">
-        </ul>
-        <h3 id="my-peer">Your Id: </h3>
-        <video id="localStream" width="300" controls></video>
-        <br />
-        <br />
-        <video id="remoteStream" width="300" controls></video>
-        <br />
-        <br />
-        <input type="text" id="remoteId" placeholder="Remote ID">
-        <button id="btnCall">Call</button>
+    <!-- Video area -->
+    <div class="pure-u-2-3" id="video-container">
+        <video id="their-video" autoplay></video>
+        <video id="my-video" muted="true" autoplay></video>
     </div>
-    <div id="div-dang-ky">
-        <br />
-        <br />
-        <input type="text" id="txtUsername" placeholder="Enter your username">
-        <button id="btnSignUp">Sign Up</button>
-    </div>
-</body>
-<script src="main.js"></script>
 
+    <!-- Steps -->
+    <div class="pure-u-1-3">
+        <h2>Video Chat</h2>
+
+        <p>Your id: <span id="my-id">...</span></p>
+        <p>Share this id with others so they can call you.</p>
+        <h3>Make a call</h3>
+        <form id="make-call" class="pure-form">
+            <input type="text" placeholder="Call user id..." id="callto-id">
+            <button href="#" class="pure-button pure-button-success" type="submit">Call</button>
+        </form>
+        <form id="end-call" class="pure-form">
+            <p>Currently in call with <span id="their-id">...</span></p>
+            <button href="#" class="pure-button pure-button-success" type="submit">End Call</button
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
+<script type="text/javascript" src="scriptnew.js"></script>
 </html>
