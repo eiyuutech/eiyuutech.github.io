@@ -51,8 +51,13 @@ const peer = new Peer({
     key: 'peerjs',
     host: 'eiyuupeers.herokuapp.com',
     secure: true,
-    port: 443
-});
+    port: 443,
+    config: {'iceServers': [
+            { url: 'stun:stun1.l.google.com:19302' },
+            { url: 'turn:numb.viagenie.ca', credential: 'muazkh', username: 'webrtc@live.com' }
+        ]}
+ }                    
+);
 
 peer.on('open', id => {
     $('#my-peer').append(id);
