@@ -32,7 +32,11 @@ function openStream() {
 function playStream(idVideoTag, stream) {
     const video = document.getElementById(idVideoTag);
     video.srcObject = stream;
-    video.play();
+    /////
+    video.onloadedmetadata = function(e) {
+            video.play();
+            video.muted = true;
+     };
 }
 
 // openStream()
