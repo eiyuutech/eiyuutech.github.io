@@ -40,11 +40,10 @@ function playStream(idVideoTag, stream) {
 
 //const peer = new Peer({ key: 'tkv5g2acaree9udi' });
 const peer = new Peer(
-  { key: 'peerjs', host: 'eiyuupeers.herokuapp.com', secure: true, port: 443 },
-  {
-  config: {'iceServers': [
+  { key: 'peerjs', host: 'eiyuupeers.herokuapp.com', secure: true, port: 443, 
+   config: {'iceServers': [
     {"url": "stun:stun.l.google.com:19302"},
-    {"url":"turn:18.182.87.106:5349?transport=tcp", username:'cinamon',"credential":"eas2018"}
+    {"url":"turn:18.182.87.106:443?transport=tcp", username:'cinamon',"credential":"eas2018"}
   ]} /* Sample servers, please use appropriate ones */  
 });
 
