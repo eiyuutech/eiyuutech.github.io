@@ -43,7 +43,7 @@ const peer = new Peer(
   { key: 'peerjs', host: 'eiyuupeers.herokuapp.com', secure: true, port: 443, 
    config: {'iceServers': [
     {url: 'stun:stun.l.google.com:19302'},
-    {url:'turn:18.182.87.106:443?transport=tcp', username:'cinamon',credential:'eas2018'}
+    {url:'turn:52.199.174.221:3478', username:'cinnamon',credential:'eas2018'}
   ]} /* Sample servers, please use appropriate ones */  
 });
 
