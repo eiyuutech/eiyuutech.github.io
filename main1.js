@@ -50,6 +50,7 @@ const peer = new Peer({
             },
             {
                 url: 'turn:52.199.174.221:3478',
+                username: 'cinnamon',
                 credential: 'eas2018'
             }
         ]
