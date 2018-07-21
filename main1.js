@@ -39,12 +39,21 @@ function playStream(idVideoTag, stream) {
 // .then(stream => playStream('localStream', stream));
 
 //const peer = new Peer({ key: 'tkv5g2acaree9udi' });
-const peer = new Peer(
-  { key: 'peerjs', host: 'eiyuupeers.herokuapp.com', secure: true, port: 443, 
-   config: {'iceServers': [
-    {url: 'stun:stun.l.google.com:19302'},
-    {url:'turn:52.199.174.221:3478', username:'cinnamon',credential:'eas2018'}
-  ]} /* Sample servers, please use appropriate ones */  
+const peer = new Peer({
+    key: 'peerjs',
+    host: 'eiyuupeers.herokuapp.com',
+    secure: true,
+    port: 443,
+    config: {
+        'iceServers': [{
+                url: 'stun:stun.l.google.com:19302'
+            },
+            {
+                url: 'turn:52.199.174.221:3478',
+                credential: 'eas2018'
+            }
+        ]
+    } /* Sample servers, please use appropriate ones */
 });
 
 peer.on('open', id => {
