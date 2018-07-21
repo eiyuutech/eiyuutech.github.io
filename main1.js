@@ -45,15 +45,21 @@ const peer = new Peer({
     secure: true,
     port: 443,
     config: {
-        'iceServers': [{
-                url: 'stun:stun.l.google.com:19302'
-            },
-            {
-                url: 'turn:52.199.174.221:3478',
-                username: 'cinnamon',
-                credential: 'eas2018'
-            }
-        ]
+        'iceServers': [
+    {
+      'urls': 'stun:stun.l.google.com:19302'
+    },
+    {
+      'urls': 'turn:192.158.29.39:3478?transport=udp',
+      'credential': 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+      'username': '28224511:1379330808'
+    },
+    {
+      'urls': 'turn:192.158.29.39:3478?transport=tcp',
+      'credential': 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+      'username': '28224511:1379330808'
+    }
+  ]
     } /* Sample servers, please use appropriate ones */
 });
 
