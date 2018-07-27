@@ -42,7 +42,7 @@ function playStream(idVideoTag, stream) {
 
 const peer = new Peer({ 
     key: 'cinnamon', 
-    host: 'cinamon.ga', 
+    host: '52.199.174.221', 
     secure: true, 
     port: 9000, 
     config: {
