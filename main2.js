@@ -41,10 +41,10 @@ function playStream(idVideoTag, stream) {
 // .then(stream => playStream('localStream', stream));
 
 const peer = new Peer({ 
-    key: 'peerjs', 
-    host: 'eiyuupeers.herokuapp.com', 
+    key: 'cinnamon', 
+    host: '52.199.174.221', 
     secure: true, 
-    port: 443, 
+    port: 9000, 
     config: {
         'iceServers': [{
                 'urls': 'stun:stun.l.google.com:19302'
